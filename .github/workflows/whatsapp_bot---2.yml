@@ -2,15 +2,21 @@ name: WhatsApp Islamic Post Sender
 
 on:
   schedule:
+    # Runs every day at 12:00 UTC = 5:00 PM Pakistan time (PKT = UTC+5)
     - cron: '0 12 * * *'
-  workflow_dispatch:
+  workflow_dispatch:  # Allows manual trigger from GitHub Actions UI
 
 jobs:
   send-post:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required to push posts_db.json back to repo
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -26,7 +32,7 @@ jobs:
           ULTRAMSG_INSTANCE: ${{ secrets.ULTRAMSG_INSTANCE }}
         run: python bot.py
 
-      - name: Save updated database
+      - name: Commit updated database
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
