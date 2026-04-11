@@ -3,7 +3,7 @@ name: WhatsApp Islamic Post Sender
 on:
   schedule:
     # Runs every day at 12:00 UTC = 5:00 PM Pakistan time (PKT = UTC+5)
-    - cron: '0 3 * * *'
+    - cron: '0 1 * * *'
   workflow_dispatch:  # Allows manual trigger from GitHub Actions UI
 
 jobs:
