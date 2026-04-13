@@ -30,5 +30,13 @@
         "failed": [],
         "timestamp": "2026-04-13T02:53:13.798572",
         "completed": true
+    },
+    "post_5": {
+        "sent_to": [],
+        "failed": [
+            "120363168038607976@g.us"
+        ],
+        "timestamp": "2026-04-13T12:56:44.831582",
+        "completed": false
     }
 }
