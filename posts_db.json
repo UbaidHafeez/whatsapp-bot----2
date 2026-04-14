@@ -32,11 +32,11 @@
         "completed": true
     },
     "post_5": {
-        "sent_to": [],
-        "failed": [
+        "sent_to": [
             "120363168038607976@g.us"
         ],
+        "failed": [],
         "timestamp": "2026-04-13T12:56:44.831582",
-        "completed": false
+        "completed": true
     }
 }
